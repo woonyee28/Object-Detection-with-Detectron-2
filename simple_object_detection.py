@@ -6,7 +6,7 @@ from detectron2.data import MetadataCatalog
 import cv2
 
 # get image
-im = cv2.imread("./input.jpg")
+im = cv2.imread("./input.png")
 
 # Create config
 cfg = get_cfg()
@@ -26,7 +26,6 @@ v = Visualizer(im[:, :, ::-1], MetadataCatalog.get(cfg.DATASETS.TRAIN[0]), scale
 out = v.draw_instance_predictions(outputs["instances"].to("cpu"))
 out_image = out.get_image()[:, :, ::-1]
 cv2.imwrite("output.jpg", out_image)
-cv2.imshow("output", out_image)
 cv2.waitKey(0)
 
 

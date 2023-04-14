@@ -1,6 +1,7 @@
 # Object Detection with Detectron2
 This project is a simple demonstration of object detection using Detectron2, a popular deep learning framework for object detection and segmentation. The project uses the Faster R-CNN with ResNet-101 FPN model trained on the COCO dataset for object detection.    
 
+![Sample](./output.jpg)
 ## Requirements
 - Python 3.x
 - OpenCV
