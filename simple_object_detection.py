@@ -24,7 +24,9 @@ outputs = predictor(im)
 # Show the prediction outcome
 v = Visualizer(im[:, :, ::-1], MetadataCatalog.get(cfg.DATASETS.TRAIN[0]), scale=1.2)
 out = v.draw_instance_predictions(outputs["instances"].to("cpu"))
-cv2.imshow("output", out.get_image()[:, :, ::-1])
+out_image = out.get_image()[:, :, ::-1]
+cv2.imwrite("output.jpg", out_image)
+cv2.imshow("output", out_image)
 cv2.waitKey(0)
 
 
